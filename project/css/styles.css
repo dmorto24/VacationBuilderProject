@@ -1,0 +1,71 @@
+/*color palette
+light blue: 8ECAE6
+cyan: 219EBC
+navy: 023047
+light orang: FFB703
+dark oragne: FB8500
+*/
+body{
+	background-color:#FFB703;
+}
+h1{
+	position:center;
+	color:#023047;
+	font-size: 50px;
+	font-family:Papyrus;
+}
+img{
+	height:100px;
+	width:100px;
+}
+
+
+ul
+{	
+	list-style-type:none;
+	background-color:#FB8500;
+	height:50px;
+	overflow:hidden;
+	font-size: 35px;
+	font-family:Optima, sans-serif;
+}
+li
+{
+	float:left;
+}
+li a, .drp
+{
+	  display: inline-block;
+	  color:#023047;
+	  text-align: center;
+	  padding: 10px 180px;
+	  text-decoration:none;
+	  font-size:25px;
+}
+li a:hover{
+	background-color:#219EBC;
+	color:white;
+	text-decoration:none;
+}
+li .menu-item
+{
+	display:inline-block;
+}
+.menu-content
+{
+	display:none;
+	position:absolute;
+	background-color:#8ECAE6;
+	z-index:1;
+}
+.menu-content a {
+	color: #023047;
+	padding: 20px 150px;
+	text-decoration: none;
+	display: block;
+}
+.menu-item:hover .menu-content
+{
+	display:block;
+	
+}
