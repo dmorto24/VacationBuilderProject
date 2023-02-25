@@ -1,20 +1,23 @@
 /*color palette
-light blue: 8ECAE6
-cyan: 219EBC
-navy: 023047
-light orang: FFB703
-dark oragne: FB8500
+baby blue:CAF0F8
+turquoise: 90E0EF
+cyan:00B4D8
+blue: 0077B6
+Navy: 03045E
 */
 body{
-	background-color:#FFB703;
+	position:center;
+	background-color:#CAF0F8;
+	font-size: 20px;
+	font-family:Optima, sans-serif;
 }
 h1{
 	position:center;
-	color:#023047;
+	color:#03045E;
 	font-size: 50px;
 	font-family:Papyrus;
 }
-img{
+.logo{
 	height:100px;
 	width:100px;
 }
@@ -23,7 +26,7 @@ img{
 ul
 {	
 	list-style-type:none;
-	background-color:#FB8500;
+	background-color:#00B4D8;
 	height:50px;
 	overflow:hidden;
 	font-size: 35px;
@@ -36,15 +39,15 @@ li
 li a, .drp
 {
 	  display: inline-block;
-	  color:#023047;
+	  color:#03045E;
 	  text-align: center;
 	  padding: 10px 180px;
 	  text-decoration:none;
 	  font-size:25px;
 }
 li a:hover{
-	background-color:#219EBC;
-	color:white;
+	background-color:#00B4D8;
+	color:#CAF0F8;
 	text-decoration:none;
 }
 li .menu-item
@@ -55,11 +58,11 @@ li .menu-item
 {
 	display:none;
 	position:absolute;
-	background-color:#8ECAE6;
+	background-color:#90E0EF;
 	z-index:1;
 }
 .menu-content a {
-	color: #023047;
+	color: #03045E;
 	padding: 20px 150px;
 	text-decoration: none;
 	display: block;
@@ -68,4 +71,38 @@ li .menu-item
 {
 	display:block;
 	
+}
+/* Style inputs */
+  input[type=text], select {
+	width: 20%;
+	font-size:20px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #03045E;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #03045E;
+	background-color:white;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  width: 30%;
+  background-color: #90E0EF;
+  color: #0077B6;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #03045E;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: #03045E;
+  color:#CAF0F8;
 }
