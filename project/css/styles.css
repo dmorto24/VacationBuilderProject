@@ -11,6 +11,17 @@ body{
 	font-size: 20px;
 	font-family:Optima, sans-serif;
 }
+table{
+	
+	width:100%;
+}
+tr:nth-child(even) {
+	background-color: #90E0EF;
+}
+td {
+  padding: 15px;
+  text-align: center;
+}
 h1{
 	position:center;
 	color:#03045E;

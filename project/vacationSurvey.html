@@ -7,23 +7,36 @@
 <body align=center>
 		
 <form action="/action_page.php">
-	<label for="theme">Vacation Theme</label>
-		<select id="theme" name="theme">
+<table>
+<tr>
+	<td><label for="theme">Vacation Theme</label></td>
+		<td><select id="theme" name="theme">
 			<option value="mountain">Beach</option>
 			<option value="mountain">Mountain</option>
 			<option value="city">City</option>
 			<option value="romantic">Romantic</option>
 			<option value="adventure">Adventure</option>
 			<option value="relaxing">Relaxing</option>
-		</select><br>
-	<label for="lodging">Lodging</label>
-		<select id="lodging" name="lodging">
+		</select></td>
+</tr>
+<tr>
+	<td><label for="lodging">Lodging</label></td>
+		<td><select id="lodging" name="lodging">
 			<option value="hotel">Hotel</option>
 			<option value="airbnb">Air BnB</option>
 			<option value="resort">Resort</option>
 			<option value="skilodge">Ski Lodge</option>
-		</select><br>
-	<input type="submit" value="Submit">
+		</select></td>
+</tr>
+<tr>
+	<td><label for="travelmethod">Travel Method</label></td>
+		<td><select id="travelmethod" name="travelmethod">
+			<option value="hotel">Drive</option>
+			<option value="airbnb">Fly</option>
+		</select></td>
+</tr>
+	<td colspan=2><input type="submit" value="Submit"></td>
+</table>
 </form>
 </body>
 </html>
