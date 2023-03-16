@@ -1,0 +1,197 @@
+/*color palette
+baby blue:CAF0F8
+turquoise: 90E0EF
+cyan:00B4D8
+blue: 0077B6
+Navy: 03045E
+*/
+body{
+  position:center;
+  background-color:#CAF0F8;
+  font-size: 20px;
+  font-family:Optima, sans-serif;
+  margin: 0;
+  height: 2000px;
+}
+table{
+	color: #03045E;
+	width:100%;
+}
+.hotelTable{
+	color: #03045E;
+	width:100%;
+}
+
+.surveyTable tr:nth-child(even) {
+	background-color: #90E0EF;
+}
+td {
+  padding: 10px;
+  text-align: center;
+}
+h1{
+	position:center;
+	color:#03045E;
+	font-size: 50px;
+	font-family:Papyrus;
+}
+.logo{
+	height:100px;
+	width:100px;
+}
+.dreamVacation{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+.top {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  background-color: #03045E;
+  height: 500px;
+  opacity: 1;
+  text-align: center;
+  font-family: Papyrus;
+  font-size: 80px;
+  font-weight: bold;
+  color: #CAF0F8;
+}
+
+
+ul
+{	
+	list-style-type:none;
+	background-color:#00B4D8;
+	height:50px;
+	overflow:hidden;
+	font-size: 35px;
+	font-family:Optima, sans-serif;
+}
+li
+{
+	float:left;
+}
+li a, .drp
+{
+	  display: inline-block;
+	  color:#03045E;
+	  text-align: center;
+	  padding: 10px 180px;
+	  text-decoration:none;
+	  font-size:25px;
+}
+li a:hover{
+	background-color:#00B4D8;
+	color:#CAF0F8;
+	text-decoration:none;
+}
+li .menu-item
+{
+	display:inline-block;
+}
+.menu-content
+{
+	display:none;
+	position:absolute;
+	background-color:#90E0EF;
+	z-index:1;
+}
+.menu-content a {
+	color: #03045E;
+	padding: 20px 150px;
+	text-decoration: none;
+	display: block;
+}
+.menu-item:hover .menu-content
+{
+	display:block;
+	
+}
+/* Style inputs */
+  input[type=text], select {
+	width: 20%;
+	font-size:20px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #03045E;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #03045E;
+	background-color:white;
+}
+  input[type=number], select {
+	width: 20%;
+	font-size:20px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #03045E;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #03045E;
+	background-color:white;
+}
+/* Style the submit button */
+input[type=submit] {
+  width: 30%;
+  background-color: #90E0EF;
+  color: #0077B6;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #03045E;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:20px;
+}
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: #03045E;
+  color:#CAF0F8;
+}
+.slidecontainer {
+  width: 75%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 75%; /* Full-width */
+  height: 12px; /* Specified height */
+  border-radius: 4px;
+  background: white; /* white background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #03045E;
+	border-radius: 50%;/* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #03045E;
+border-radius: 50%;  /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
