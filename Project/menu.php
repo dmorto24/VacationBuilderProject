@@ -16,7 +16,7 @@
 		<div class="menu-content">
 			<a href="display_hotels.php">Hotels</a><br>
 			<a href="display_cars.php">Vehicles</a><br>
-			<a href="#">Activities</a><br>
+			<a href="display_activities.php">Activities</a><br>
 			<a href="#">Resturants</a><br>
 			
 		</div>

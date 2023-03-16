@@ -42,7 +42,7 @@ h1{
 .dreamVacation{
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   text-align: left;
   transition: opacity 0.5s ease-in-out;
@@ -53,11 +53,11 @@ h1{
   position: relative;
   width: 100%;
   background-color: #03045E;
-  height: 500px;
+  height: 900px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   font-family: Papyrus;
-  font-size: 80px;
+  font-size: 100px;
   font-weight: bold;
   color: #CAF0F8;
 }
@@ -114,7 +114,7 @@ li .menu-item
 }
 /* Style inputs */
   input[type=text], select {
-	width: 20%;
+	width: 25%;
 	font-size:20px;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -126,7 +126,19 @@ li .menu-item
 	background-color:white;
 }
   input[type=number], select {
-	width: 20%;
+	width: 25%;
+	font-size:20px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #03045E;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #03045E;
+	background-color:white;
+}
+  input[type=date], select {
+	width: 25%;
 	font-size:20px;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -153,6 +165,29 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #03045E;
   color:#CAF0F8;
+}
+button {
+  width: 30%;
+  background-color: #90E0EF;
+  color: #0077B6;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #03045E;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:20px;
+}
+button:hover {
+  background-color: #03045E;
+  color:#CAF0F8;
+}
+a{
+	color:#03045E;
+	text-decoration: none;
+}
+a:hover{
+	color:#0077B6;
+	text-decoration: underline;
 }
 .slidecontainer {
   width: 75%; /* Width of the outside container */

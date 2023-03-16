@@ -27,6 +27,7 @@ include("menu.php");
 			echo $row2['type']."<br>";
 			echo $row2['price']."<br>";
 		echo "</a>";
+		echo "<button type=button id=car".$total."> Add to Package </button>";
 		echo "</td>";
 		
 		$count++;

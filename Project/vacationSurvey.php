@@ -7,7 +7,7 @@
 </head>
 <body align=center>
 <div class="top" ><div class="dreamVacation" id="dreamTitle" >Your Dream Vacation Starts Here</div></div>
-<form action="/action_page.php">
+<form action="survey_process.php" method="POST">
 
 <table class='surveyTable'>
 <tr>
@@ -39,7 +39,7 @@
 </tr>
 <tr>
 	<td><label for="budget">What is your price range</label></td>
-		<td><div class="slidecontainer" align='center'><input type="range" min="100" max="1500" value="50" class="slider" id="myRange"><p id='demo'></p></div>
+		<td><div class="slidecontainer" align='center'><input type="range" min="100" max="1500" value="50" class="slider" id="budget" name="budget"><p id='demo'></p></div>
 	</td>
 </tr>
 <tr>
@@ -49,7 +49,7 @@
 </tr>
 <tr>
 	<td><label for="rentalType">If yes. What type of car do you need?</label></td>
-		<td><select id="resturants" name="resturants">
+		<td><select id="rentalType" name="rentalType">
 			<option value="none">None</option>
 			<option value="suv">SUV</option>
 			<option value="luxury">Luxury</option>
@@ -60,6 +60,14 @@
 <tr>
 	<td><label for="numPeople">How many people are coming on your vacation?</label></td>
 	<td><input type="number" id="numPeople" name="numPeople" min="1"></td>
+</tr>
+<tr>
+	<td><label for="leaveDate">What day do you want to leave?</label></td>
+	<td><input type="date" id="leaveDate" name="leaveDate"></td>
+</tr>
+<tr>
+	<td><label for="returnDate">What day do you want to return?</label></td>
+	<td><input type="date" id="returnDate" name="returnDate"></td>
 </tr>
 <tr>
 	<td><label for="resturants">What kind of food do you like?</label></td>
@@ -74,7 +82,7 @@
 </tr>
 <tr>
 	<td><label for="activities">What kind of activities are you wanting to do</label></td>
-		<td><select id="activities" name="activies">
+		<td><select id="activities" name="activities">
 			<option value="ocean">Ocean Activities</option>
 			<option value="ski">Ski</option>
 			<option value="explore">Explore</option>

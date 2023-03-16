@@ -11,7 +11,7 @@ include("menu.php");
 <table align="center">
 <?php
 		
-	$sql2="SELECT * FROM hotel_table";
+	$sql2="SELECT * FROM activity_table";
 	$result2=$connect->query($sql2);
 	
 	$count=1;
@@ -24,8 +24,7 @@ include("menu.php");
 		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
-			echo $row2['name']."-";
-			echo $row2['location']."<br>";
+			echo $row2['name']."<br>";
 			echo $row2['price']."<br>";
 		echo "</a>";
 			echo "<button type=button id=lodging".$total."> Add to Package </button>";
