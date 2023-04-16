@@ -25,9 +25,9 @@ include("menu.php");
 			echo "<img height='350px' width='550px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['type']."<br>";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']."/day<br>";
 		echo "</a>";
-		echo "<button type=button id=car".$total."> Add to Package </button>";
+		echo "<form action='addcartopackage.php' method='post'><button type='submit' name=car id='car".$total."' value='".$row2['type']."'>Add to Package</button></form>";
 		echo "</td>";
 		
 		$count++;

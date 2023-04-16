@@ -26,9 +26,9 @@ include("menu.php");
 			echo "<br>";
 			echo $row2['name']."-";
 			echo $row2['location']."<br>";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']."/night<br>";
 		echo "</a>";
-			echo "<button type=button id=lodging".$total."> Add to Package </button>";
+			echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
 		
 		echo "</td>";
 		

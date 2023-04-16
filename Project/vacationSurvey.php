@@ -3,7 +3,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css\styles.css">
-	<script src="js/script.js"></script>
+	
 </head>
 <body align=center>
 <div class="top" ><div class="dreamVacation" id="dreamTitle" >Your Dream Vacation Starts Here</div></div>
@@ -12,8 +12,8 @@
 <table class='surveyTable'>
 <tr>
 	<td><label for="theme">What kind of vacation do you want to go on?</label></td>
-		<td><select id="theme" name="theme">
-			<option value="mountain">Beach</option>
+		<td><select id="theme" name="theme" >
+			<option value="beach">Beach</option>
 			<option value="mountain">Mountain</option>
 			<option value="city">City</option>
 			<option value="romantic">Romantic</option>
@@ -31,35 +31,17 @@
 		</select></td>
 </tr>
 <tr>
-	<td><label for="travelmethod">How do you want to get There?</label></td>
+	<td><label for="travelmethod">How do you want to get there?</label></td>
 		<td><select id="travelmethod" name="travelmethod">
 			<option value="drive">Drive</option>
 			<option value="fly">Fly</option>
 		</select></td>
 </tr>
 <tr>
-	<td><label for="budget">What is your price range</label></td>
-		<td><div class="slidecontainer" align='center'><input type="range" min="100" max="1500" value="50" class="slider" id="budget" name="budget"><p id='demo'></p></div>
+	<td><label for="budget">What is your budget?</label></td>
+		<td><div class="slidecontainer" align='center'><input type="range" min="100" max="1500" value="500" class="slider" id="budget" name="budget"><p>Budget: <span id="slider_value"></span></p></div>
 	</td>
-</tr>
-<tr>
-	<td><label for="rental">Will you need a rental car?</label></td>
-		<td>Yes:<input type="radio" id="yesRental" name="rental"/>
-		No:<input type="radio" id="noRental" name="rental"/></td>
-</tr>
-<tr>
-	<td><label for="rentalType">If yes. What type of car do you need?</label></td>
-		<td><select id="rentalType" name="rentalType">
-			<option value="none">None</option>
-			<option value="suv">SUV</option>
-			<option value="luxury">Luxury</option>
-			<option value="sport">Sport</option>
-			<option value="van">Van</option>
-		</select></td>
-</tr>
-<tr>
-	<td><label for="numPeople">How many people are coming on your vacation?</label></td>
-	<td><input type="number" id="numPeople" name="numPeople" min="1"></td>
+	
 </tr>
 <tr>
 	<td><label for="leaveDate">What day do you want to leave?</label></td>
@@ -92,9 +74,27 @@
 		</select></td>
 </tr>
 <tr>
-	<td colspan=2><input type="submit" value="Submit"></td>
+	<td><label for="numPeople">How many people are coming on your vacation?</label></td>
+	<td><input type="number" id="numPeople" name="numPeople" min="1"></td>
+</tr>
+<tr>
+	<td><label for="rental">Will you need a rental car?</label></td>
+		<td>Yes:<input type="radio" id="yesRental" name="rental" onclick="rental_cars()"/>
+			No:<input type="radio" id="noRental" name="rental"/></td>
+</tr>
+<tr style="display:none" id="rentals">
+	<td><label for="rentalType">If yes, what type of car do you need?</label></td>
+		<td><select id="rentalType" name="rentalType">
+			<option value="na"</option>
+			<option value="suv">SUV</option>
+			<option value="luxury">Luxury</option>
+			<option value="sport">Sport</option>
+			<option value="van">Van</option>
+		</select></td>
 </tr>
 </table>
+<br><br><input type="submit" value="Submit">
 </form>
+<script src="js/script.js"></script>
 </body>
 </html>

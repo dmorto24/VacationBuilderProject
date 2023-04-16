@@ -1,4 +1,3 @@
-
 var title = document.getElementById('dreamTitle');
 
 if (title) {
@@ -8,16 +7,20 @@ if (title) {
     title.style.opacity = opacity < 0 ? 0 : opacity;
   };
 }
+var slider = document.getElementById("budget");
+var output = document.getElementById("slider_value");
+output.innerHTML = slider.value;
 
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-console.log(slider);
-console.log(output);
-
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value;
+	output.innerHTML = this.value;
+}
+
+function rental_cars()
+{
+	document.getElementById("rentals").style.display="contents";
+}
+
+function something(x)
+{
+	alert(x);
 }
