@@ -12,12 +12,12 @@ $ren = $_POST['rentalType'];
 $numPeople = $_POST['numPeople'];
 $leaveDate = $_POST['leaveDate'];
 $returnDate = $_POST['returnDate'];
-$resturants = $_POST['resturants'];
+$restaurants = $_POST['restaurants'];
 $activities= $_POST['activities'];
 
 
 $sql = "INSERT INTO survey_table (`sid`, `user_id`, `type`, `lodging`, `travel_method`, `price`, `rental`, `type_rental`, `num_people`, `leave_date`, `return_date`, `food_type`,`activities`) 
-		VALUES (0, '$uid', '$theme', '$lodging', '$travelmethod', '$budget', '$rental', '$ren', '$numPeople','$leaveDate','$returnDate','$resturants','$activities')";
+		VALUES (0, '$uid', '$theme', '$lodging', '$travelmethod', '$budget', '$rental', '$ren', '$numPeople','$leaveDate','$returnDate','$restaurants','$activities')";
 		
 $result = $connect->query($sql);
 
@@ -26,7 +26,9 @@ if ($result == FALSE){
 }
 
 echo "<h3>Based off Your Survey Results, You Might Like...</h3>";
+echo"<form method='POST' action='addtopackagesurvey.php'>";
 
+echo "<h3> These activities...</h3>";
 if ($activities == "ocean"){
 	$sql2="SELECT * FROM activity_table LIMIT 3";
 	$result2=$connect->query($sql2);
@@ -42,10 +44,10 @@ if ($activities == "ocean"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
-		
+			
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		echo "</td>";
 		
 		$count++;
@@ -74,9 +76,9 @@ if ($activities == "ski"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -105,9 +107,9 @@ if ($activities == "explore"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -136,9 +138,9 @@ if ($activities == "amusement"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -168,9 +170,9 @@ if ($activities == "museums"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -199,9 +201,9 @@ if ($activities == "shop"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['name']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per person<br>";
 		echo "</a>";
-			echo "<form action='addactivitytopackage.php' method='post'><button type='submit' name=activity id='activity".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -215,6 +217,7 @@ if ($activities == "shop"){
 	}
 	echo "</table>";
 }
+echo "<h3> These vehicles...</h3>";
 if ($ren == "suv"){
 	$sql2="SELECT * FROM car_table WHERE sid >= 1";
 	$result2=$connect->query($sql2);
@@ -230,9 +233,9 @@ if ($ren == "suv"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['type']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per day<br>";
 		echo "</a>";
-			echo "<form action='addcartopackage.php' method='post'><button type='submit' name=car id='car".$total."' value='".$row2['type']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['type']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -261,9 +264,9 @@ if ($ren == "luxury"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['type']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per day<br>";
 		echo "</a>";
-			echo "<form action='addcartopackage.php' method='post'><button type='submit' name=car id='car".$total."' value='".$row2['type']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['type']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -292,9 +295,9 @@ if ($ren == "sport"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['type']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per day<br>";
 		echo "</a>";
-			echo "<form action='addcartopackage.php' method='post'><button type='submit' name=car id='car".$total."' value='".$row2['type']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['type']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -323,9 +326,9 @@ if ($ren == "van"){
 			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
 			echo "<br>";
 			echo $row2['type']."-";
-			echo $row2['price']."<br>";
+			echo "$".$row2['price']." per day<br>";
 		echo "</a>";
-			echo "<form action='addcartopackage.php' method='post'><button type='submit' name=car id='car".$total."' value='".$row2['type']."'>Add to Package</button></form>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['type']."'> Add to Package";
 		
 		echo "</td>";
 			
@@ -339,6 +342,7 @@ if ($ren == "van"){
 	}
 	echo "</table>";
 }
+echo "<h3> These lodging options...</h3>";
 if ($theme == "beach"){
 	if ($lodging == "airbnb"){
 		$sql2="SELECT * FROM hotel_table WHERE sid < 6";
@@ -356,9 +360,9 @@ if ($theme == "beach"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -388,9 +392,9 @@ if ($theme == "beach"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -420,9 +424,9 @@ if ($theme == "beach"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -454,9 +458,9 @@ if ($theme == "mountain"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -486,9 +490,9 @@ if ($theme == "mountain"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -518,9 +522,9 @@ if ($theme == "mountain"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -552,9 +556,9 @@ if ($theme == "city"){
 				echo "<br>";
 				echo $row2['name']."-";
 				echo $row2['location']."<br>";
-				echo $row2['price']."<br>";
+				echo "$".$row2['price']." per night<br>";
 			echo "</a>";
-				echo "<form action='addlodgingtopackage.php' method='post'><button type='submit' name=lodging id='lodging".$total."' value='".$row2['name']."'>Add to Package</button></form>";
+				echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
 		
 			echo "</td>";
 				
@@ -569,14 +573,205 @@ if ($theme == "city"){
 		echo "</table>";
 	}
 }
+echo "<h3> These resturants...</h3>";
+if ($restaurants == "mexican"){
+	$sql2="SELECT * FROM resturant_table WHERE type='Mexican'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
+if ($restaurants == "bbq"){
+	$sql2="SELECT * FROM resturant_table WHERE type='BBQ'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
+if ($restaurants == "italian"){
+	$sql2="SELECT * FROM resturant_table WHERE type='Italian'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
+if ($restaurants == "seafood"){
+	$sql2="SELECT * FROM resturant_table WHERE type='Seafood'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
+if ($restaurants == "american"){
+	$sql2="SELECT * FROM resturant_table WHERE type='American'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
+if ($restaurants == "asian"){
+	$sql2="SELECT * FROM resturant_table WHERE type='Asian'";
+	$result2=$connect->query($sql2);
+	
+	$count=1;
+	$total=1;
+	echo "<table align='center' class='hotelTable'>";
+	echo "<tr>";
+	while($row2 = $result2->fetch_assoc())
+	{
+		echo "<td>";
+		echo "<a href = javascript:void(0) onclick='popupfunction(".$total.")' class=linktext>";
+			echo "<img height='400px' width='500px' src= '".$row2['img']."'/>";
+			echo "<br>";
+			echo $row2['type']." Restaurant<br>";
+			echo $row2['name']."-";
+			echo $row2['location']."<br>";
+			echo "About $".$row2['price']." per person <br>";
+		echo "</a>";
+			echo "<input type='checkbox' name='suggested[]' value='".$row2['name']."'> Add to Package";
+		echo "</td>";
+		
+		$count++;
+		$total++;
+		
+		if($count==4){
+			echo "</tr><tr>";
+			$count=1;
+		}
+	}
+	echo "</table>";
+}
 ?>
 <html>
-<script>
-function returnHome(){
-	window.location.href="http://localhost/Project/display_hotels.php"
-}
-</script>
 <body align='center'>
-	<br><button onclick=returnHome()> Return Home </button>
+	<br><button type='SUBMIT'> Add Selected to Package </button>
 </body>
 </html> 
