@@ -5,8 +5,7 @@ include("db_connection.php");
 $added = $_POST['car'];
 
 
-if(($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$added','C')") === TRUE) and
-($connect->query("INSERT INTO previous_table (user_id, added, type) VALUES ('$uid','$added','C')"))=== TRUE){
+if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$added','C')") === TRUE) {
 ?>
 	<script>
     alert("Successfully added to package!");

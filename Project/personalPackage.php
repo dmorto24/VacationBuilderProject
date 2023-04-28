@@ -83,7 +83,7 @@ $uid=$_SESSION['id'];?>
 			$resultRES=$connect->query($sqlRES);
 			$rowRES = $resultRES->fetch_assoc();
 			echo "<td>";
-				"<img height='400px' width='500px' src= '".$rowRES['img'].".jpg'/>";
+				echo "<img height='400px' width='500px' src= '".$rowRES['img'].".jpg'/>";
 				echo "<br>";
 				echo $rowRES['name']."<br>";
 				echo "$".$rowRES['price']."/night<br>";

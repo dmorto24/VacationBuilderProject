@@ -19,8 +19,7 @@ for ($i = 0; $i<=count($addedArray); $i++) {
 	$carresult = $connect->query($carsql);
 	$restaurantresult = $connect->query($restaurantsql);
 	if ($activityresult->num_rows > 0) {
-		if(($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','A')") === TRUE) and
-		($connect->query("INSERT INTO previous_table (user_id, added, type) VALUES ('$uid','$addedItem','A')"))=== TRUE){
+		if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','A')") === TRUE) {
 			}else{
 			die('Error executing query: ' . $connect->error);
 			}
@@ -28,25 +27,21 @@ for ($i = 0; $i<=count($addedArray); $i++) {
 	}		
 
 	if ($lodgingresult->num_rows > 0) {
-		if(($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','L')") === TRUE) and
-		($connect->query("INSERT INTO previous_table (user_id, added, type) VALUES ('$uid','$added','L')"))=== TRUE){
+		if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','L')") === TRUE) {
 			}else{
 			die('Error executing query: ' . $connect->error);
 			}
 		
 	}
 	if ($carresult->num_rows > 0) {
-		if(($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','C')") === TRUE) and
-		($connect->query("INSERT INTO previous_table (user_id, added, type) VALUES ('$uid','$added','C')"))=== TRUE){
+		if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','C')") === TRUE) {
 			}else{
 			die('Error executing query: ' . $connect->error);
 			}
 		
 	}
 	if ($restaurantresult->num_rows > 0) {
-		if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','R')") === TRUE)
-		($connect->query("INSERT INTO previous_table (user_id, added, type) VALUES ('$uid','$added','R')"))=== TRUE){
-			
+		if($connect->query("INSERT INTO package_table (user_id, added,typeadded) VALUES ('$uid','$addedItem','R')") === TRUE){
 			}else{
 			die('Error executing query: ' . $connect->error);
 			}
