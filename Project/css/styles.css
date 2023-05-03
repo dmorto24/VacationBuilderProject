@@ -112,6 +112,39 @@ li .menu-item
 	display:block;
 	
 }
+
+
+li a, .drpad
+{
+	  display: inline-block;
+	  color:#03045E;
+	  text-align: center;
+	  padding: 10px 100px;
+	  text-decoration:none;
+	  font-size:25px;
+}
+li .menu-itemad
+{
+	display:inline-block;
+}
+.menu-contentad
+{
+	display:none;
+	position:absolute;
+	background-color:#90E0EF;
+	z-index:1;
+}
+.menu-contentad a {
+	color: #03045E;
+	padding: 10px 100px;
+	text-decoration: none;
+	display: block;
+}
+.menu-itemad:hover .menu-contentad
+{
+	display:block;
+	
+}
 /* Style inputs */
 input[type=text],
 input[type=password],
